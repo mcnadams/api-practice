@@ -50,3 +50,8 @@ raceFilter.addEventListener('change', () => {
     searchParams.race = race;
     console.log(searchParams);
 });
+
+export function getSearchParams() {
+    console.log('in function getSearchParams');
+    return searchParams;
+}
