@@ -53,4 +53,12 @@ submitButton.addEventListener('click', (event) => {
     if(!url) {
         window.alert('please choose a name and/or effect');
     }
+    fetch(url)
+        .then(response => response.json())
+        .then(body => {
+            console.log(body);
+        })
+        .catch(error => {
+            console.log(error);
+        });
 });
