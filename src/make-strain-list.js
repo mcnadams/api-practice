@@ -11,6 +11,7 @@ export function makeListTemplate(strain) {
 }
 
 const list = document.getElementById('strain-list');
+const totalResults = document.getElementById('total-results');
 
 export default function loadStrainList(strains) {
     while(list.children.length > 0) {
@@ -20,6 +21,7 @@ export default function loadStrainList(strains) {
         const dom = makeListTemplate(strain);
         list.appendChild(dom);
     });
+    totalResults.textContent = strains.length + ' total results';
 }
 
 export function noResults() {

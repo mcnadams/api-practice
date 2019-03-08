@@ -16,13 +16,3 @@ export function makeSearchUrl(searchParams) {
         return '';
     }
 }
-
-// const submitButton = document.getElementById('submit-button');
-
-
-// export function getUrl(searchParams) {
-//     submitButton.addEventListener('click', () => {
-//         console.log('submit clicked');
-//         return makeSearchUrl(searchParams);
-//     });
-// }
