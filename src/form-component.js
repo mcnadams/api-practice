@@ -4,12 +4,14 @@ const medicalForm = document.getElementById('medical-search-form');
 const effectFilter = document.getElementById('effect-filter');
 const effectSelector = document.getElementById('effect');
 const medicalSelector = document.getElementById('medical');
+const raceFilter = document.getElementById('race-filter');
 
 const nameSearch = nameForm.querySelector('input');
 const searchParams = {
     name: '',
-    effect: ''
-}
+    effect: '',
+    race: ''
+};
 
 nameForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -40,4 +42,11 @@ medicalSelector.addEventListener('change', () => {
     searchParams.effect = medicalSelector.value;
     searchParams.name = nameSearch.value;
     console.log('effect event listener:', searchParams);
+});
+
+raceFilter.addEventListener('change', () => {
+    const formData = new FormData(raceFilter);
+    const race = formData.get('race')
+    searchParams.race = race;
+    console.log(searchParams);
 });
