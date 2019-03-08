@@ -1,46 +1,9 @@
+import filterResults from '../src/filter-component.js';
+
 const test = QUnit.test;
 
 QUnit.module('filter tests');
 
-function filterByRace(results, race) {
-    return results.filter(result => {
-        return result.race === race;
-    });
-}
-
-function filterByName(results, name) {
-    return results.filter(result => {
-        return result.name.toLowerCase().indexOf(name.toLowerCase()) >= 0;
-    });
-}
-
-function filterResults(results, searchParams) {
-    const name = searchParams.name;
-    const effect = searchParams.effect;
-    const race = searchParams.race;
-    if(!name && effect && !race) {
-        return results;
-    }
-    else if(!name && effect && race) {
-        return filterByRace(results, race);
-    }
-    else if(name && !effect && race) {
-        return filterByRace(results, race);
-    }
-    else if(name && effect && race) {
-        const byRace = filterByRace(results, race);
-        return filterByName(byRace, name);
-    }
-    else if(name && effect && !race) {
-        return filterByName(results, name);
-    }
-    else if(name && !effect && !race) {
-        return results;
-    }
-    else {
-        return [];
-    }
-}
 
 test('if !name, effect, !race return results', assert => {
     const searchParams = {
