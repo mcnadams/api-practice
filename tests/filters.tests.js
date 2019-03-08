@@ -8,6 +8,12 @@ function filterByRace(results, race) {
     });
 }
 
+function filterByName(results, name) {
+    return results.filter(result => {
+        return result.name.indexOf(name) >= 0;
+    });
+}
+
 function filterResults(results, searchParams) {
     const name = searchParams.name;
     const effect = searchParams.effect;
@@ -17,6 +23,13 @@ function filterResults(results, searchParams) {
     }
     else if(!name && effect && race) {
         return filterByRace(results, race);
+    }
+    else if(name && !effect && race) {
+        return filterByRace(results, race);
+    }
+    else if(name && effect && race) {
+        const byRace = filterByRace(results, race);
+        return filterByName(byRace, name);
     }
 }
 
@@ -143,7 +156,51 @@ test('if !name, effects, race return results filtered by race', assert => {
     assert.deepEqual(results, expected);
 });
 
+test('if name, !effects, race return results filtered by race', assert => {
+    const searchParams = {
+        name: 'Cookies',
+        effect: '',
+        race: 'indica'
+    };
 
+    const expected = [
+        {
+            'id': 597,
+            'name': 'Cookies Kush',
+            'race': 'indica',
+            'desc': 'Cookies Kush from Barney\'s Coffeeshop combines Girl Scout Cookies with the Rolex phenotype of OG Kush, resulting in a potent indica cross worthy of 1st place in High Times\' 2014 Amsterdam Cannabis Cup in the "Best Coffeeshop Strain" category.'
+        }
+    ];
+
+    const results = filterResults(nameResults, searchParams);
+    assert.deepEqual(results, expected);
+});
+
+test('if name, effects, race return results filtered by race', assert => {
+    const searchParams = {
+        name: 'Agent',
+        effect: 'Dry Mouth',
+        race: 'hybrid'
+    };
+
+    const expected = [
+        {
+            'id': 5,
+            'name': 'Agent Orange',
+            'race': 'hybrid',
+            'effect': 'Dry Mouth'
+        },
+        {
+            'id': 6,
+            'name': 'Agent Tangie',
+            'race': 'hybrid',
+            'effect': 'Dry Mouth'
+        }
+    ];
+
+    const results = filterResults(effectResults, searchParams);
+    assert.deepEqual(results, expected);
+});
 
 const effectResults = [
     {
