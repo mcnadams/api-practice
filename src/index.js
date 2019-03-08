@@ -7,23 +7,27 @@ const searchByEffectUrl = `https://strainapi.evanbusse.com/${API_KEY}/strains/se
 
 fetch(allEffectsUrl)
     .then(response => {
-        console.log(response);
+        //console.log(response);
         return response.json();
     })
     .then(body => {
-        console.log(body);
+        body.forEach(effect => {
+            if(effect.type === 'medical') {
+                console.log(effect.effect);
+            }
+        });
     })
     .catch((error) => {
         console.log('Error!!!', error);
     });
 
-fetch(searchByEffectUrl)
-    .then(response => {
-        return response.json();
-    })
-    .then(body => {
-        console.log(body);
-    })
-    .catch((error) => {
-        console.log('Error!!!', error);
-    });
+// fetch(searchByEffectUrl)
+//     .then(response => {
+//         return response.json();
+//     })
+//     .then(body => {
+//         console.log(body);
+//     })
+//     .catch((error) => {
+//         console.log('Error!!!', error);
+//     });

@@ -1,0 +1,11 @@
+#search-form-container {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.search-form {
+    padding: 5px;
+
+}

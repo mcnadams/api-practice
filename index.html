@@ -4,10 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>API Shit</title>
+    <title>Cannabis API</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <header>
+        <h1>Explore Cannabis Strains</h1>
+    </header>
+
+    <main>
+        <section id="search-form-container">
+            <form id="name-search-form" class="search-form">
+                <input type="text" name="name" placeholder="search by strain name">
+            </form>
+            <form id="effect-search-form" class="search-form">
+                <select name="effect">
+                    <option name="effect" default value="">Effect:</option>
+                    <option name="effect" value="Relaxed">Relaxed</option>
+                    <option name="effect" value="Dizzy">Dizzy</option>
+                    <option name="effect" value="Hungry">Hungry</option>
+                    <option name="effect" value="Euphoric">Euphoric</option>
+                    <option name="effect" value="Happy">Happy</option>
+                    <option name="effect" value="Creative">Creative</option>
+                    <option name="effect" value="Energetic">Energetic</option>
+                    <option name="effect" value="Talkative">Talkative</option>
+                    <option name="effect" value="Dry Mouth">Dry Mouth</option>
+                    <option name="effect" value="Uplifted">Uplifted</option>
+                    <option name="effect" value="Tingly">Tingly</option>
+                    <option name="effect" value="Paranoid">Paranoid</option>
+                    <option name="effect" value="Sleepy">Sleepy</option>
+                    <option name="effect" value="Dry Eyes">Dry Eyes</option>
+                    <option name="effect" value="Focused">Focused</option>
+                    <option name="effect" value="Anxious">Anxious</option>
+                    <option name="effect" value="Giggly">Giggly</option>
+                    <option name="effect" value="Giggly">Giggly</option>
+                    <option name="effect" value="Aroused">Aroused</option>
+                </select>
+            </form>
+            <form id="medical-search-form" class="search-form">
+                <select name="medical">
+                    <option name="medical" default value="">Medical Use:</option>
+                    <option name="medical" default value="Depression">Depression</option>
+                    <option name="medical" default value="Insomnia">Insomnia</option>
+                    <option name="medical" default value="Pain">Pain</option>
+                    <option name="medical" default value="Stress">Stress</option>
+                    <option name="medical" default value="Cramps">Cramps</option>
+                    <option name="medical" default value="Lack of Appetite">Lack of Appetite</option>
+                    <option name="medical" default value="Nausea">Nausea</option>
+                    <option name="medical" default value="Headache">Headache</option>
+                    <option name="medical" default value="Fatigue">Fatigue</option>
+                    <option name="medical" default value="Headaches">Headaches</option>
+                    <option name="medical" default value="Eye Pressure">Eye Pressure</option>
+                    <option name="medical" default value="Inflammation">Inflammation</option>
+                    <option name="medical" default value="Spasticity">Spasticity</option>
+                    <option name="medical" default value="Seizures">Seizures</option>
+                    <option name="medical" default value="Muscle Spasms">Muscle Spasms</option>
+                </select>
+            </form>
+        </section>
+    </main>
     
     <script type="module" src="./src/index.js"></script>
 </body>
