@@ -33,3 +33,9 @@ const searchByEffectUrl = `https://strainapi.evanbusse.com/${API_KEY}/strains/se
 //     .catch((error) => {
 //         console.log('Error!!!', error);
 //     });
+
+const section = document.getElementById('selections');
+console.log(section);
+section.addEventListener('mouseover', () => {
+    console.log('butts');
+}); 

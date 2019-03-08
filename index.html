@@ -14,65 +14,93 @@
     </header>
 
     <main>
-        <section id="search-form-container">
-            <form id="name-search-form" class="search-form">
-                <input type="text" name="name" placeholder="search by strain name">
-            </form>
-            <form id="effect-filter">Filter by effect?<br>
-                <label>
-                    Recreational
-                    <input type="radio" name="effect-type" value="rec">
-                </label>
-                <label>
-                    Medical
-                    <input type="radio" name="effect-type" value="medical">
-                </label>
-            </form>
-            <form id="effect-search-form" class="search-form">
-                <select id="effect" name="effect" class="hidden">
-                    <option name="effect" default value="">Effect:</option>
-                    <option name="effect" value="Relaxed">Relaxed</option>
-                    <option name="effect" value="Dizzy">Dizzy</option>
-                    <option name="effect" value="Hungry">Hungry</option>
-                    <option name="effect" value="Euphoric">Euphoric</option>
-                    <option name="effect" value="Happy">Happy</option>
-                    <option name="effect" value="Creative">Creative</option>
-                    <option name="effect" value="Energetic">Energetic</option>
-                    <option name="effect" value="Talkative">Talkative</option>
-                    <option name="effect" value="Dry Mouth">Dry Mouth</option>
-                    <option name="effect" value="Uplifted">Uplifted</option>
-                    <option name="effect" value="Tingly">Tingly</option>
-                    <option name="effect" value="Paranoid">Paranoid</option>
-                    <option name="effect" value="Sleepy">Sleepy</option>
-                    <option name="effect" value="Dry Eyes">Dry Eyes</option>
-                    <option name="effect" value="Focused">Focused</option>
-                    <option name="effect" value="Anxious">Anxious</option>
-                    <option name="effect" value="Giggly">Giggly</option>
-                    <option name="effect" value="Giggly">Giggly</option>
-                    <option name="effect" value="Aroused">Aroused</option>
-                </select>
-            </form>
-            <form id="medical-search-form" class="search-form">
-                <select id="medical" name="medical" class="hidden">
-                    <option name="medical" default value="">Medical Use:</option>
-                    <option name="medical" default value="Depression">Depression</option>
-                    <option name="medical" default value="Insomnia">Insomnia</option>
-                    <option name="medical" default value="Pain">Pain</option>
-                    <option name="medical" default value="Stress">Stress</option>
-                    <option name="medical" default value="Cramps">Cramps</option>
-                    <option name="medical" default value="Lack of Appetite">Lack of Appetite</option>
-                    <option name="medical" default value="Nausea">Nausea</option>
-                    <option name="medical" default value="Headache">Headache</option>
-                    <option name="medical" default value="Fatigue">Fatigue</option>
-                    <option name="medical" default value="Headaches">Headaches</option>
-                    <option name="medical" default value="Eye Pressure">Eye Pressure</option>
-                    <option name="medical" default value="Inflammation">Inflammation</option>
-                    <option name="medical" default value="Spasticity">Spasticity</option>
-                    <option name="medical" default value="Seizures">Seizures</option>
-                    <option name="medical" default value="Muscle Spasms">Muscle Spasms</option>
-                </select>
-            </form>
+        <section id="selections">
+                <section id="search-form-container">
+                        <form id="name-search-form">
+                            <fieldset>
+                                <legend>Search by name</legend>
+                                <input type="text" name="name" id="name" placeholder="strain name">
+                            </fieldset>
+                        </form>
+                        <form id="effect-filter">
+                            <fieldset>
+                                <legend>Filter by effect</legend>
+                                <label class="radio-label">
+                                    Recreational
+                                    <input type="radio" name="effect-type" value="rec">
+                                </label>
+                                <label class="radio-label">
+                                    Medical
+                                    <input type="radio" name="effect-type" value="medical">
+                                </label>
+                            </fieldset>
+                        </form>
+                        <form id="race-filter">
+                            <fieldset>
+                                <legend>Filter by race</legend>
+                                <label class="radio-label">
+                                    Sativa
+                                    <input type="radio" name="race" value="sativa">
+                                </label>
+                                <label class="radio-label">
+                                    Indica
+                                    <input type="radio" name="race" value="indica">
+                                </label>
+                                <label class="radio-label">
+                                    Hybrid
+                                    <input type="radio" name="race" value="hybrid">
+                                </label>
+                            </fieldset>
+                        </form>
+                    </section>
+                    <section id="effect-menu">
+                        <form id="effect-search-form" class="search-form">
+                            <select id="effect" name="effect" class="hidden">
+                                <option name="effect" default value="">Effect:</option>
+                                <option name="effect" value="Relaxed">Relaxed</option>
+                                <option name="effect" value="Dizzy">Dizzy</option>
+                                <option name="effect" value="Hungry">Hungry</option>
+                                <option name="effect" value="Euphoric">Euphoric</option>
+                                <option name="effect" value="Happy">Happy</option>
+                                <option name="effect" value="Creative">Creative</option>
+                                <option name="effect" value="Energetic">Energetic</option>
+                                <option name="effect" value="Talkative">Talkative</option>
+                                <option name="effect" value="Dry Mouth">Dry Mouth</option>
+                                <option name="effect" value="Uplifted">Uplifted</option>
+                                <option name="effect" value="Tingly">Tingly</option>
+                                <option name="effect" value="Paranoid">Paranoid</option>
+                                <option name="effect" value="Sleepy">Sleepy</option>
+                                <option name="effect" value="Dry Eyes">Dry Eyes</option>
+                                <option name="effect" value="Focused">Focused</option>
+                                <option name="effect" value="Anxious">Anxious</option>
+                                <option name="effect" value="Giggly">Giggly</option>
+                                <option name="effect" value="Giggly">Giggly</option>
+                                <option name="effect" value="Aroused">Aroused</option>
+                            </select>
+                        </form>
+                        <form id="medical-search-form" class="search-form">
+                            <select id="medical" name="medical" class="hidden">
+                                <option name="medical" default value="">Medical Use:</option>
+                                <option name="medical" default value="Depression">Depression</option>
+                                <option name="medical" default value="Insomnia">Insomnia</option>
+                                <option name="medical" default value="Pain">Pain</option>
+                                <option name="medical" default value="Stress">Stress</option>
+                                <option name="medical" default value="Cramps">Cramps</option>
+                                <option name="medical" default value="Lack of Appetite">Lack of Appetite</option>
+                                <option name="medical" default value="Nausea">Nausea</option>
+                                <option name="medical" default value="Headache">Headache</option>
+                                <option name="medical" default value="Fatigue">Fatigue</option>
+                                <option name="medical" default value="Headaches">Headaches</option>
+                                <option name="medical" default value="Eye Pressure">Eye Pressure</option>
+                                <option name="medical" default value="Inflammation">Inflammation</option>
+                                <option name="medical" default value="Spasticity">Spasticity</option>
+                                <option name="medical" default value="Seizures">Seizures</option>
+                                <option name="medical" default value="Muscle Spasms">Muscle Spasms</option>
+                            </select>
+                        </form>
+                    </section>
         </section>
+        
 
         <section id="strain-display">
             <ul id="strain-list">

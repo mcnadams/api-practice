@@ -9,12 +9,11 @@ function makeSearchUrl(searchParams) {
     const byName = `strainapi.evanbusse.com/${API_KEY}/strains/search/name/${name}`;
     const byEffect = `strainapi.evanbusse.com/${API_KEY}/strains/search/effect/${effect}`;
 
+    if(searchParams.effect) {
+        return byEffect;
+    }
     if(searchParams.name) {
         return byName;
-    }
-    if(searchParams.effect) {
-        console.log(byEffect);
-        return byEffect;
     }
     else {
         return '';
@@ -23,10 +22,10 @@ function makeSearchUrl(searchParams) {
 
 test('if searchParams contains name and empty effect, search by name', assert => {
     const searchParams = {
-        name: 'Bonnie', 
+        name: 'alpha blue', 
         effect: ''
     };
-    const expected = `strainapi.evanbusse.com/${API_KEY}/strains/search/name/Bonnie`;
+    const expected = `strainapi.evanbusse.com/${API_KEY}/strains/search/name/alpha%20blue`;
 
     const result = makeSearchUrl(searchParams);
 
@@ -36,6 +35,18 @@ test('if searchParams contains name and empty effect, search by name', assert =>
 test('if searchParams contains effect and no name, search by effect', assert => {
     const searchParams = {
         name: '', 
+        effect: 'happy'
+    };
+    const expected = `strainapi.evanbusse.com/${API_KEY}/strains/search/effect/happy`;
+
+    const result = makeSearchUrl(searchParams);
+
+    assert.equal(result, expected);
+});
+
+test('if searchParams contains effect and also name, search by effect', assert => {
+    const searchParams = {
+        name: 'alpha blue', 
         effect: 'happy'
     };
     const expected = `strainapi.evanbusse.com/${API_KEY}/strains/search/effect/happy`;

@@ -6,19 +6,58 @@ header {
     text-align: center;
 }
 
-#search-form-container {
+#selections {
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
     margin: auto;
-    width: 75%;
+    background: lightblue;
+}
+
+#search-form-container {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.search-form {
-    padding: 5px;
+#search-form-container form {
+    width: 25%;
 }
 
-.search-form input, select {
+#name {
     font-size: 1em;
+}
+
+#effect-menu {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.search-form select {
+    font-size: 1em;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.radio-label {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#strain-display {
+    margin-left: 10%;
+    margin-top: 50px;
 }
 
 li {
@@ -30,10 +69,6 @@ li {
 a {
     text-decoration: none;
     color: black;
-}
-
-#strain-display {
-    margin-left: 10%;
 }
 
 .hidden {
