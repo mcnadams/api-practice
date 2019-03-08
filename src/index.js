@@ -58,6 +58,7 @@ submitButton.addEventListener('click', (event) => {
         .then(response => response.json())
         .then(body => {
             if(body.length) {
+                console.log(body[0]);
                 loadStrainList(body);
             }
             else {
