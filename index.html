@@ -18,8 +18,18 @@
             <form id="name-search-form" class="search-form">
                 <input type="text" name="name" placeholder="search by strain name">
             </form>
+            <form id="effect-filter">Filter by effect?<br>
+                <label>
+                    Recreational
+                    <input type="radio" name="effect-type" value="rec">
+                </label>
+                <label>
+                    Medical
+                    <input type="radio" name="effect-type" value="medical">
+                </label>
+            </form>
             <form id="effect-search-form" class="search-form">
-                <select name="effect">
+                <select id="effect" name="effect" class="hidden">
                     <option name="effect" default value="">Effect:</option>
                     <option name="effect" value="Relaxed">Relaxed</option>
                     <option name="effect" value="Dizzy">Dizzy</option>
@@ -43,7 +53,7 @@
                 </select>
             </form>
             <form id="medical-search-form" class="search-form">
-                <select name="medical">
+                <select id="medical" name="medical" class="hidden">
                     <option name="medical" default value="">Medical Use:</option>
                     <option name="medical" default value="Depression">Depression</option>
                     <option name="medical" default value="Insomnia">Insomnia</option>

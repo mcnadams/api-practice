@@ -31,3 +31,12 @@ a {
     text-decoration: none;
     color: black;
 }
+
+#strain-display {
+    margin-left: 10%;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
