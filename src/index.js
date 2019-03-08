@@ -2,6 +2,7 @@ import './form-component.js';
 import './search-component.js';
 import { getSearchParams } from './form-component.js';
 import { makeSearchUrl } from './search-component.js';
+import loadStrainList from './make-strain-list.js';
 
 // const API_KEY = 'kFxeO3X';
 
@@ -56,7 +57,7 @@ submitButton.addEventListener('click', (event) => {
     fetch(url)
         .then(response => response.json())
         .then(body => {
-            console.log(body);
+            loadStrainList(body);
         })
         .catch(error => {
             console.log(error);

@@ -9,3 +9,24 @@ export function makeListTemplate(strain) {
     `;
     return template.content;
 }
+
+const list = document.getElementById('strain-list');
+
+export default function loadStrainList(strains) {
+    while(list.children.length > 0) {
+        list.lastElementChild.remove();
+    }
+    strains.forEach(strain => {
+        const dom = makeListTemplate(strain);
+        list.appendChild(dom);
+    });
+}
+
+export function noResults() {
+    while(list.children.length > 0) {
+        list.lastElementChild.remove();
+    }
+    const errorMsg = document.createElement('p');
+    errorMsg.textContent = 'No Results';
+    list.appendChild(errorMsg);
+}
