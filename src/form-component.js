@@ -6,10 +6,15 @@ const effectSelector = document.getElementById('effect');
 const medicalSelector = document.getElementById('medical');
 
 const nameSearch = nameForm.querySelector('input');
+const searchParams = {
+    name: '',
+    effect: ''
+}
 
 nameForm.addEventListener('submit', event => {
     event.preventDefault();
-    console.log(nameSearch.value);
+    searchParams.name = nameSearch.value;
+    console.log('name event listener:', searchParams);
 });
 
 effectFilter.addEventListener('click', () => {
@@ -23,4 +28,16 @@ effectFilter.addEventListener('click', () => {
         effectSelector.classList.add('hidden');
         medicalSelector.classList.remove('hidden');
     }
+});
+
+effectSelector.addEventListener('change', () => {
+    searchParams.effect = effectSelector.value;
+    searchParams.name = nameSearch.value;
+    console.log('effect event listener:', searchParams);
+});
+
+medicalSelector.addEventListener('change', () => {
+    searchParams.effect = medicalSelector.value;
+    searchParams.name = nameSearch.value;
+    console.log('effect event listener:', searchParams);
 });
