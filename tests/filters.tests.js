@@ -10,7 +10,7 @@ function filterByRace(results, race) {
 
 function filterByName(results, name) {
     return results.filter(result => {
-        return result.name.indexOf(name) >= 0;
+        return result.name.toLowerCase().indexOf(name.toLowerCase()) >= 0;
     });
 }
 
@@ -30,6 +30,15 @@ function filterResults(results, searchParams) {
     else if(name && effect && race) {
         const byRace = filterByRace(results, race);
         return filterByName(byRace, name);
+    }
+    else if(name && effect && !race) {
+        return filterByName(results, name);
+    }
+    else if(name && !effect && !race) {
+        return results;
+    }
+    else {
+        return [];
     }
 }
 
@@ -176,9 +185,9 @@ test('if name, !effects, race return results filtered by race', assert => {
     assert.deepEqual(results, expected);
 });
 
-test('if name, effects, race return results filtered by race', assert => {
+test('if name, effects, race return results filtered by race and name', assert => {
     const searchParams = {
-        name: 'Agent',
+        name: 'agent',
         effect: 'Dry Mouth',
         race: 'hybrid'
     };
@@ -199,6 +208,50 @@ test('if name, effects, race return results filtered by race', assert => {
     ];
 
     const results = filterResults(effectResults, searchParams);
+    assert.deepEqual(results, expected);
+});
+
+test('if name, effects, !race return results filtered by name', assert => {
+    const searchParams = {
+        name: 'Af',
+        effect: 'Dry Mouth',
+        race: ''
+    };
+    const expected = [
+        {
+            'id': 2,
+            'name': 'African',
+            'race': 'sativa',
+            'effect': 'Dry Mouth'
+        },
+        {
+            'id': 3,
+            'name': 'Afternoon Delight',
+            'race': 'hybrid',
+            'effect': 'Dry Mouth'
+        },
+        {
+            'id': 4,
+            'name': 'Afwreck',
+            'race': 'hybrid',
+            'effect': 'Dry Mouth'
+        }
+    ];
+
+    const result = filterResults(effectResults, searchParams);
+
+    assert.deepEqual(result, expected);
+});
+
+test('if name, !effect, !race return results', assert => {
+    const searchParams = {
+        name: 'cookies',
+        effect: '',
+        race: ''
+    };
+    const expected = nameResults;
+    const results = filterResults(nameResults, searchParams);
+
     assert.deepEqual(results, expected);
 });
 
