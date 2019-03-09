@@ -14,7 +14,7 @@ test('make html template for strain', assert => {
 
     const expected = `
         <li id="strain-38">
-            <a href="./strain.html?id=38">
+            <a href="./strain.html?id=Alpha%20Blue-38">
                 Alpha Blue (sativa)
             </a>
         </li>

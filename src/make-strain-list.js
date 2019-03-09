@@ -1,8 +1,9 @@
 export function makeListTemplate(strain) {
+    const url = './strain.html?id=';
     const template = document.createElement('template');
     template.innerHTML = `
         <li id="strain-${strain.id}">
-            <a href="./strain.html?id=${strain.id}">
+            <a href=${url + encodeURIComponent(strain.name + '-' + strain.id)}>
             ${strain.name} (${strain.race})
             </a>
         </li>
