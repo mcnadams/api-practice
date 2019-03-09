@@ -118,10 +118,10 @@ a {
     margin: auto;
 }
 
-ul li ul li {
+#effect {
     list-style: none;
-    font-size: 0.8em;
-    margin: 0;
+    font-size: 0.9em;
+    margin: 2px;
     display: inline;
 }
 
