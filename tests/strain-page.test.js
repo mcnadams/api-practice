@@ -1,29 +1,8 @@
-import { makeSingleLi } from '../src/strain-template.js';
+import { makeSingleLi, makeDescription, makeStrainHeader } from '../src/strain-template.js';
 
 const test = QUnit.test;
 
 QUnit.module('strain detail page');
-
-function makeStrainHeader(strain) {
-    const template = document.createElement('template');
-    template.innerHTML = `
-        <header id="strain-header">
-            <h1>${strain.name}</h1>
-            <h2>${strain.race}</h2>    
-        </header>
-    `;
-
-    return template.content;
-}
-
-function makeDescription(strain) {
-    const template = document.createElement('template');
-    template.innerHTML = `
-        <p>${strain.desc}</p>
-    `;
-
-    return template.content;
-}
 
 test('make strain header', assert => {
     const expected = `
@@ -50,7 +29,8 @@ test('make description p template', assert => {
 test('make single effect list item', assert => {
     const effect = allEffects.positive[0];
     const expected = /*html*/
-    `<li>Happy</li>`;
+    // eslint-disable-next-line quotes
+    `<li id="effect">Happy</li>`;
     const result = makeSingleLi(effect);
 
     assert.htmlEqual(result, expected);
