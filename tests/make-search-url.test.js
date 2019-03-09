@@ -11,7 +11,7 @@ test('if searchParams contains name and empty effect, search by name', assert =>
         name: 'alpha blue', 
         effect: ''
     };
-    const expected = `http://strainapi.evanbusse.com/${API_KEY}/strains/search/name/alpha%20blue`;
+    const expected = `https://strainapi.evanbusse.com/${API_KEY}/strains/search/name/alpha%20blue`;
 
     const result = makeSearchUrl(searchParams);
 
@@ -23,7 +23,7 @@ test('if searchParams contains effect and no name, search by effect', assert => 
         name: '', 
         effect: 'happy'
     };
-    const expected = `http://strainapi.evanbusse.com/${API_KEY}/strains/search/effect/happy`;
+    const expected = `https://strainapi.evanbusse.com/${API_KEY}/strains/search/effect/happy`;
 
     const result = makeSearchUrl(searchParams);
 
@@ -35,7 +35,7 @@ test('if searchParams contains effect and also name, search by effect', assert =
         name: 'alpha blue', 
         effect: 'happy'
     };
-    const expected = `http://strainapi.evanbusse.com/${API_KEY}/strains/search/effect/happy`;
+    const expected = `https://strainapi.evanbusse.com/${API_KEY}/strains/search/effect/happy`;
 
     const result = makeSearchUrl(searchParams);
 
