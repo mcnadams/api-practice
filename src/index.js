@@ -10,9 +10,7 @@ const submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', (event) => {
     event.preventDefault();
     const searchParams = getSearchParams();
-    console.log('INDEX submit clicked', searchParams);
     const url = makeSearchUrl(searchParams);
-    console.log(url);
     if(!url) {
         window.alert('please choose a name and/or effect');
     }
@@ -21,7 +19,6 @@ submitButton.addEventListener('click', (event) => {
         .then(body => {
             const results = filterResults(body, searchParams);
             if(results.length) {
-                console.log(results.length);
                 loadStrainList(results);
             }
             else {
@@ -29,6 +26,7 @@ submitButton.addEventListener('click', (event) => {
             }
         })
         .catch(error => {
+            // eslint-disable-next-line no-console
             console.log(error);
         });
 });

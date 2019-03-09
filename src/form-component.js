@@ -16,7 +16,6 @@ const searchParams = {
 nameForm.addEventListener('submit', event => {
     event.preventDefault();
     searchParams.name = nameSearch.value;
-    console.log('name event listener:', searchParams);
 });
 
 effectFilter.addEventListener('click', () => {
@@ -35,24 +34,20 @@ effectFilter.addEventListener('click', () => {
 effectSelector.addEventListener('change', () => {
     searchParams.effect = effectSelector.value;
     searchParams.name = nameSearch.value;
-    console.log('effect event listener:', searchParams);
 });
 
 medicalSelector.addEventListener('change', () => {
     searchParams.effect = medicalSelector.value;
     searchParams.name = nameSearch.value;
-    console.log('effect event listener:', searchParams);
 });
 
 raceFilter.addEventListener('change', () => {
     const formData = new FormData(raceFilter);
     const race = formData.get('race')
     searchParams.race = race;
-    console.log(searchParams);
 });
 
 export function getSearchParams() {
-    console.log('in function getSearchParams');
     searchParams.name = nameSearch.value;
     return searchParams;
 }
