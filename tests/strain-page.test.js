@@ -44,6 +44,111 @@ test('make description p template', assert => {
     assert.htmlEqual(result, expected);
 });
 
+function makeUL(effects) {
+    const template = document.createElement('template');
+    template.innerHTML = `<p>hi</p>`
+    
+    // `
+    //     <ul>
+    //         ${effects.forEach(effect => {
+    //     return `<li>${effect}</li>`;
+    // })}
+    //     </ul>
+    // `;
+    console.log(template.content);
+    return template.content;
+}
+
+function makeEffectsList(allEffects) {
+    const template = document.createElement('template');
+    template.innerHTML = `
+        <ul>
+            <li>Positive
+                ${makeUL(allEffects.positive)}
+            </li>
+            <li>Negative
+                <ul>
+                    <li>Dry Mouth</li>
+                    <li>Dry Eyes</li>
+                    <li>Paranoid</li>
+                    <li>Dizzy</li>
+                </ul> 
+            </li>
+            <li>Medical
+                <ul>
+                    <li>Stress</li>
+                    <li>Depression</li>
+                    <li>Pain</li>
+                    <li>Fatigue</li>
+                    <li>Lack of Appetite</li>
+                    <li>Headache</li>
+                </ul>
+            </li>
+        </ul>
+    `;
+    return template.contents;
+}
+
+test('make effects list', assert => {
+    const effects = {
+        'positive': [
+            'Happy',
+            'Euphoric',
+            'Uplifted',
+            'Energetic',
+            'Relaxed'
+        ],
+        'negative': [
+            'Dry Mouth',
+            'Dry Eyes',
+            'Paranoid',
+            'Dizzy'
+        ],
+        'medical': [
+            'Stress',
+            'Depression',
+            'Pain',
+            'Fatigue',
+            'Lack of Appetite',
+            'Headache'
+        ]
+    };
+    const expected = `
+        <ul>
+            <li>Positive
+                <ul>
+                    <li>Happy</li>
+                    <li>Euphoric</li>
+                    <li>Uplifted</li>
+                    <li>Energetic</li>
+                    <li>Relaxed</li>
+                </ul>
+            </li>
+            <li>Negative
+                <ul>
+                    <li>Dry Mouth</li>
+                    <li>Dry Eyes</li>
+                    <li>Paranoid</li>
+                    <li>Dizzy</li>
+                </ul> 
+            </li>
+            <li>Medical
+                <ul>
+                    <li>Stress</li>
+                    <li>Depression</li>
+                    <li>Pain</li>
+                    <li>Fatigue</li>
+                    <li>Lack of Appetite</li>
+                    <li>Headache</li>
+                </ul>
+            </li>
+        </ul>
+    `;
+    const results = makeEffectsList(effects);
+
+    assert.htmlEqual(results, expected);
+});
+
 
 const fromNameSearch = {
     'id': 11,
