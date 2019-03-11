@@ -1,4 +1,4 @@
-import { makeSingleLi, makeDescription, makeStrainHeader } from '../src/strain-template.js';
+import { makeSingleLi, makeDescription, makeStrainHeader, makeFlavorLi } from '../src/strain-template.js';
 
 const test = QUnit.test;
 
@@ -37,6 +37,18 @@ test('make single effect list item', assert => {
 });
 
 
+test('make flavor list item', assert => {
+    const flavor = flavors[0];
+    const expected = /*html*/
+        // eslint-disable-next-line quotes
+        `<li>Earthy</li>`;
+
+    const result = makeFlavorLi(flavor);
+
+    assert.htmlEqual(result, expected);
+
+});
+
 const fromNameSearch = {
     'id': 11,
     'name': 'Alaskan Thunder Fuck',
@@ -67,3 +79,9 @@ const allEffects = {
         'Headache'
     ]
 };
+
+const flavors = [
+    'Earthy',
+    'Woody',
+    'Pine'
+];

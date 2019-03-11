@@ -25,13 +25,17 @@ export function makeDescription(strain) {
     return template.content;
 }
 
+export function makeFlavorLi(flavor) {
+    const template = document.createElement('template');
+    template.innerHTML = `<li>${flavor}</li>`;
+    return template.content;
+}
 
 const header = document.getElementById('strain-header');
 const description = document.getElementById('description');
 const positiveList = document.getElementById('positive-effects-list');
 const negativeList = document.getElementById('negative-effects-list');
 const medicalList = document.getElementById('medical-effects-list');
-
 
 export function makeStrainPage(strain, allEffects) {
     allEffects.positive.forEach(effect => {
