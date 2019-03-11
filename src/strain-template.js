@@ -24,3 +24,30 @@ export function makeDescription(strain) {
 
     return template.content;
 }
+
+
+const header = document.getElementById('strain-header');
+const description = document.getElementById('description');
+const positiveList = document.getElementById('positive-effects-list');
+const negativeList = document.getElementById('negative-effects-list');
+const medicalList = document.getElementById('medical-effects-list');
+
+
+export function makeStrainPage(strain, allEffects) {
+    allEffects.positive.forEach(effect => {
+        const dom = makeSingleLi(effect);
+        positiveList.appendChild(dom);
+    });
+    allEffects.negative.forEach(effect => {
+        const dom = makeSingleLi(effect);
+        negativeList.appendChild(dom);
+    });
+    allEffects.medical.forEach(effect => {
+        const dom = makeSingleLi(effect);
+        medicalList.appendChild(dom);
+    });
+    header.appendChild(makeStrainHeader(strain));
+    description.appendChild(makeDescription(strain));
+}
+
+

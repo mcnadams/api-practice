@@ -112,6 +112,7 @@ a {
 #back {
     width: 50px;
     margin: auto;
+    border: 1px solid blue;
 }
 
 #effect-li {
