@@ -1,6 +1,6 @@
 export function makeSingleLi(effect) {
     const template = document.createElement('template');
-    template.innerHTML = `<li id="effect">${effect}</li>`;
+    template.innerHTML = `<li id="effect-li">${effect}</li>`;
     return template.content;
 }
  

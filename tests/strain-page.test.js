@@ -30,7 +30,7 @@ test('make single effect list item', assert => {
     const effect = allEffects.positive[0];
     const expected = /*html*/
     // eslint-disable-next-line quotes
-    `<li id="effect">Happy</li>`;
+    `<li id="effect-li">Happy</li>`;
     const result = makeSingleLi(effect);
 
     assert.htmlEqual(result, expected);
