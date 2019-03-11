@@ -11,6 +11,7 @@ submitButton.addEventListener('click', (event) => {
     event.preventDefault();
     const searchParams = getSearchParams();
     const url = makeSearchUrl(searchParams);
+    console.log(url);
     if(!url) {
         window.alert('please choose a name and/or effect');
     }
