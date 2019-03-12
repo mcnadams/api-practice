@@ -2,7 +2,7 @@ import './form-component.js';
 import './search-component.js';
 import { getSearchParams } from './form-component.js';
 import { makeSearchUrl } from './search-component.js';
-import loadStrainList, { noResults } from './make-strain-list.js';
+import loadStrainList from './make-strain-list.js';
 import filterResults from './filter-component.js';
 
 const submitButton = document.getElementById('submit-button');
@@ -19,12 +19,7 @@ submitButton.addEventListener('click', (event) => {
         .then(response => response.json())
         .then(body => {
             const results = filterResults(body, searchParams);
-            if(results.length) {
-                loadStrainList(results);
-            }
-            else {
-                noResults();
-            }
+            loadStrainList(results);
         })
         .catch(error => {
             // eslint-disable-next-line no-console
