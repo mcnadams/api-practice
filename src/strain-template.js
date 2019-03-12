@@ -38,24 +38,24 @@ const negativeList = document.getElementById('negative-effects-list');
 const medicalList = document.getElementById('medical-effects-list');
 const flavorsList = document.getElementById('flavors');
 
-export function makeStrainPage(strain, allEffects, flavors) {
+export function makeStrainPage(strain) {
     header.appendChild(makeStrainHeader(strain));
     description.appendChild(makeDescription(strain));
 
-    allEffects.positive.forEach(effect => {
+    strain.allEffects.positive.forEach(effect => {
         const dom = makeSingleLi(effect);
         positiveList.appendChild(dom);
     });
-    allEffects.negative.forEach(effect => {
+    strain.allEffects.negative.forEach(effect => {
         const dom = makeSingleLi(effect);
         negativeList.appendChild(dom);
     });
-    allEffects.medical.forEach(effect => {
+    strain.allEffects.medical.forEach(effect => {
         const dom = makeSingleLi(effect);
         medicalList.appendChild(dom);
     });
     
-    flavors.forEach(flavor => {
+    strain.flavors.forEach(flavor => {
         const dom = makeFlavorLi(flavor);
         flavorsList.appendChild(dom);
     });
