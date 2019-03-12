@@ -42,6 +42,8 @@ export function makeStrainPage(strain) {
     header.appendChild(makeStrainHeader(strain));
     description.appendChild(makeDescription(strain));
 
+    console.log(strain);
+
     strain.allEffects.positive.forEach(effect => {
         const dom = makeSingleLi(effect);
         positiveList.appendChild(dom);
