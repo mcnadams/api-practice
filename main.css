@@ -1,5 +1,17 @@
 body {
-    font-family: 'Titillium Web', sans-serif;
+    /* font-family: 'Titillium Web', sans-serif; */
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#index-body {
+    background-image: url(assets/bkg-img-light.jpg);
+}
+
+#index-body header {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    width: 80%;
+    margin: auto;
 }
 
 header {
@@ -62,6 +74,7 @@ legend {
 #strain-display {
     margin-left: 10%;
     margin-top: 50px;
+
 }
 
 #submit-button {
