@@ -7,10 +7,10 @@ export function makeSingleLi(effect) {
 export function makeStrainHeader(strain) {
     const template = document.createElement('template');
     template.innerHTML = `
-        <header id="strain-header">
+        <div id="strain-header-info">
             <h1>${strain.name}</h1>
             <h2>${strain.race}</h2>    
-        </header>
+        </div>
     `;
 
     return template.content;

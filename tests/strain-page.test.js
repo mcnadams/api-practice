@@ -6,10 +6,10 @@ QUnit.module('strain detail page');
 
 test('make strain header', assert => {
     const expected = `
-        <header id="strain-header">
+        <div id="strain-header-info">
             <h1>Alaskan Thunder Fuck</h1>
             <h2>sativa</h2>    
-        </header>
+        </div>
     `;
     const result = makeStrainHeader(fromNameSearch);
 
