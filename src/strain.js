@@ -35,8 +35,19 @@ fetch(nameUrl)
                         strain.flavors = results;
                         makeStrainPage(strain);            
                     })
+                    .catch(error => {
+                    // eslint-disable-next-line no-console
+                        console.log(error);
+                    });
+            })
+            .catch(error => {
+                    // eslint-disable-next-line no-console
+                console.log(error);
+            });
     })
     .catch(error => {
             // eslint-disable-next-line no-console
         console.log(error);
     });
+
+
