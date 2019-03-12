@@ -17,10 +17,13 @@ export function makeStrainHeader(strain) {
 }
 
 export function makeDescription(strain) {
+    
     const template = document.createElement('template');
-    template.innerHTML = `
-        <p>${strain.desc}</p>
-    `;
+    if(strain.desc) {
+        template.innerHTML = `
+            <p>${strain.desc}</p>
+        `;
+    }
 
     return template.content;
 }
